@@ -1,0 +1,119 @@
+{
+  "intercept": -3.026793317560357,
+  "n_reps": 100,
+  "n_deploy": 5000,
+  "train_sizes": [
+    150,
+    300,
+    600,
+    1200,
+    2400
+  ],
+  "scenarios": {
+    "baseline": {
+      "control_shift": 0.0,
+      "vendor_coef": 0.0,
+      "logit_shift": 0.0
+    },
+    "control_erosion": {
+      "control_shift": -0.8,
+      "vendor_coef": 0.0,
+      "logit_shift": 0.0
+    },
+    "vendor_threat": {
+      "control_shift": 0.0,
+      "vendor_coef": 4.0,
+      "logit_shift": 0.0
+    },
+    "threat_surge": {
+      "control_shift": 0.0,
+      "vendor_coef": 0.0,
+      "logit_shift": 0.7
+    }
+  },
+  "rules": [
+    [
+      "H1",
+      "hard",
+      [
+        [
+          "data_sensitivity",
+          ">",
+          0.7
+        ],
+        [
+          "access",
+          "<",
+          0.4
+        ]
+      ]
+    ],
+    [
+      "H2",
+      "hard",
+      [
+        [
+          "data_sensitivity",
+          ">",
+          0.75
+        ],
+        [
+          "encryption",
+          "<",
+          0.4
+        ]
+      ]
+    ],
+    [
+      "S1",
+      "soft",
+      [
+        [
+          "data_volume",
+          ">",
+          0.65
+        ],
+        [
+          "monitoring",
+          "<",
+          0.4
+        ]
+      ]
+    ],
+    [
+      "S2",
+      "soft",
+      [
+        [
+          "data_sensitivity",
+          ">",
+          0.6
+        ],
+        [
+          "vendor",
+          "<",
+          0.4
+        ]
+      ]
+    ],
+    [
+      "S3",
+      "soft",
+      [
+        [
+          "dt_breadth",
+          ">",
+          0.6
+        ],
+        [
+          "incident_response",
+          "<",
+          0.35
+        ]
+      ]
+    ]
+  ],
+  "rule_noise": 0.15,
+  "target_prevalence": 0.3,
+  "base_seed": 2026
+}

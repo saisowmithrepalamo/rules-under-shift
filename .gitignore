@@ -1,0 +1,5 @@
+.mplconfig/
+__pycache__/
+.venv/
+run_log.txt
+.DS_Store
