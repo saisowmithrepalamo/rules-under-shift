@@ -9,6 +9,15 @@ three kinds of deployment shift, and when the rules themselves are imprecise.
 
 All data are synthetic. No real enterprise or breach records are used.
 
+## Read the paper
+
+| File | What it is |
+|---|---|
+| [`paper.md`](paper.md) | The full manuscript: methods, pre-stated hypotheses, results, discussion and references |
+| [`figures/`](figures/) | Fig. 1 (policy paths) and Fig. 2 (rule gain) as they appear in the paper |
+
+Author name, affiliation and email are left blank in the manuscript.
+
 ## Design
 
 - Five training-sample sizes (150 to 2,400 initiatives) crossed with four deployment
@@ -58,4 +67,4 @@ Base seed 2026; every replication, training pool and deployment set is seeded fr
 | `cell_means.csv` | Mean utility, launched-breach share and launch share per cell |
 | `contrasts.csv` | Paired contrasts: mean, 2.5th and 97.5th percentiles, positive replications |
 | `settings.json` | Intercept, seeds, rules and scenario settings used |
-| `Figure_2.png` / `.pdf` | Rule gain and rules versus matched caution, by training size |
+| `Figure_2.png` / `.pdf` | Print version from `figures.py`: rule gain and rules versus matched caution, by training size |
